@@ -1,0 +1,26 @@
+.body{
+    background-color: rgb(31, 30, 30);
+}
+
+.site-footer
+{
+    position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+    background-color:#26272b;
+    padding:45px 0 20px;
+    font-size:15px;
+    line-height:15px;
+    color:#03805a ;
+}
+.custom{
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 250px;
+    max-width: 100%;
+    margin: auto;
+    color:#03805a ;
+}
