@@ -13,7 +13,8 @@
  <body>
   <br />
   <div class="container ">
-   <h3 align="center">All Users</h3><br /><a href="{{ route('logout')}}" class="btn btn-danger">Logout</a>
+   <h3 align="center">All Users</h3>
+   <div class="custombtn"><a href="{{ route('logout')}}" class="btn btn-danger">Logout</a></div>
    <div class="panel panel-default">
     <div class="panel-body">
         

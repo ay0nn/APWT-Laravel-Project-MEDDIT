@@ -27,8 +27,7 @@ class CommentController extends Controller
          ->orWhere('comment_by', 'like', '%'.$query.'%')
          ->orWhere('post_of_comment', 'like', '%'.$query.'%')
          ->orderBy('comment_id', 'desc')
-         ->get();
-         
+         ->get();   
       }
       else
       {

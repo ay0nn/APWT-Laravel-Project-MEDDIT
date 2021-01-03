@@ -31,10 +31,10 @@ rel="stylesheet">
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                       <li class="nva-item mx-0 mx-lg-1"><button class="btn btn-light"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#page-top">Meddit</a></button></li>
-                        <li class="nav-item mx-0 mx-lg-1"><button class="btn btn-light"><a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fa fa-user mr-1 pr-1" aria-hidden="true"></i>Welcome,{{ Session::get('user')->name }}</a></button></li>
-                        <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-light"><a href="{{ route('updf') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-sign-out-alt mr-1 pr-1"></i>Donload Notice</a></span></li>
-                        <li class="nav-item mx-0 mx-lg-1"><button class="btn btn-danger"><a href="{{ route('logout') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-sign-out-alt mr-1 pr-1"></i>Logout</a></button></li>
+                       <li class="nva-item mx-0 mx-lg-1"><butto class="btn btn-light btn-sm disabled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#page-top">Meddit</a></span></li>
+                        <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-success btn-sm disabled"><a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fa fa-user " aria-hidden="true"></i>Welcome-{{ Session::get('user')->name }}</a></span></li>
+                        <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-light btn-sm"><a href="{{ route('updf') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-download"></i>Download Notice</a></span></li>
+                        <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-danger btn-sm"><a href="{{ route('logout') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-sign-out-alt mr-1 pr-1"></i>Logout</a></span></li>
                     </ul>
                     </div>
 
@@ -50,10 +50,12 @@ rel="stylesheet">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body" aling="center">
-                   <button class="btn btn-success"> <a href="{{ route('alluser')}}" font="bolder" class="container">User List</a></button>
-                   <button class="btn btn-dark">    <a href="{{ route('allposts')}}" font="bolder" class="container">All Post</a></button>
-                   <button class="btn btn-warning">    <a href="{{ route('allcomment')}}" font="bolder" class="container">All Comments</a></button>
-                   <button class="btn btn-dark">    <a href="{{ route('addnotice')}}" font="bolder" class="container">Notices</a></button>
+                <div class="btn-group">
+                   <button class="btn btn-success btn-lg"> <a href="{{ route('alluser')}}" font="bolder" class="container">User List</a></button>
+                   <button class="btn btn-dark btn-lg">    <a href="{{ route('allposts')}}" font="bolder" class="container">All Post</a></button>
+                   <button class="btn btn-warning btn-lg">    <a href="{{ route('allcomment')}}" font="bolder" class="container">All Comments</a></button>
+                   <button class="btn btn-dark btn-lg">    <a href="{{ route('addnotice')}}" font="bolder" class="container">Notices</a></button>
+                </div>
                 </div>
             </div>       
         </div>       

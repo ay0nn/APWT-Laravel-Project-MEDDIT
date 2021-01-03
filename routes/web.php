@@ -35,11 +35,11 @@ Route::get('/allposts/action', [App\Http\Controllers\PostController::class,'acti
 Route::get('/allcomments', [App\Http\Controllers\CommentController::class,'index'])->name('allcomment');
 Route::get('/allcomment/action', [App\Http\Controllers\CommentController::class,'action'])->name('allcomment.action');
 
-Route::get('/addnotice', [App\Http\Controllers\AdminController::class,'Notice'])->name('addnotice');
+Route::get('/addnotice', [App\Http\Controllers\AdminController::class,'notice'])->name('addnotice');
 Route::post('/submit', [App\Http\Controllers\AdminController::class,'createNotice'])->name('submit');
 
-Route::get('/allnotice', [App\Http\Controllers\NoticeController::class,'index']);
-Route::get('/admin/updf', [App\Http\Controllers\NoticeController::class,'updf'])->name('updf');
+Route::get('/allnotice', [App\Http\Controllers\AdminController::class,'noticeindex']);
+Route::get('/admin/updf', [App\Http\Controllers\AdminController::class,'updf'])->name('updf');
 
 
 });

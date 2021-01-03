@@ -57,8 +57,6 @@ class UserController extends Controller
                 <a href="">Details</a> |
                 <a href="">Delete</a> 
             </td>
-                  
-         
         </tr>
         ';
        }
@@ -77,6 +75,6 @@ class UserController extends Controller
       );
 
       echo json_encode($data);
-     }
+     }  
     }
 }
