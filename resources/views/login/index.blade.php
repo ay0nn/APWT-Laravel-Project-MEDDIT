@@ -39,7 +39,7 @@ rel="stylesheet">
 <div class="col-lg-6">
     <div class="p-5">
         <div class="text-center">
-            <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+            <h1 class="h4 text-gray-900 mb-4">Meddit</h1>
         </div>
         <form class="user" method="POST" action="">
             @csrf
@@ -65,6 +65,7 @@ rel="stylesheet">
             <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">
         Log in
     </button>
+    <span role="alert" style="color: red">{{session('msg')}}</span> 
 
         <div class="text-center">
             <a class="small" href="forgot-password.html">Forgot Password?</a>

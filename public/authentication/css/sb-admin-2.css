@@ -4493,7 +4493,7 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 3.25rem;
 }
 
 .card-title {
@@ -10825,13 +10825,13 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("https://unsplash.com/IcwbJuCK-kQ");
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+  background: url("https://unsplash.com/photos/iIDiRMITYik/600x800");
   background-position: center;
   background-size: cover;
 }

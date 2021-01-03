@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\UserModel;
+use App\Models\CommentModel;
 use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
+class CommentController extends Controller
 {
     function index()
     {
-     return view('/admin.live_search');
+     return view('/admin.allcomment');
     }
 
     function action(Request $request)
@@ -21,21 +21,19 @@ class UserController extends Controller
       $query = $request->get('query');
       if($query != '')
       {
-       $data = DB::table('user')
-         ->where('name', 'like', '%'.$query.'%')
-         ->orWhere('phone_number', 'like', '%'.$query.'%')
-         ->orWhere('address', 'like', '%'.$query.'%')
-         ->orWhere('blood_group', 'like', '%'.$query.'%')
-         ->orWhere('user_type', 'like', '%'.$query.'%')
-         ->orWhere('email', 'like', '%'.$query.'%')
-         ->orderBy('user_id', 'desc')
+       $data = DB::table('comment')
+         ->where('comment_id', 'like', '%'.$query.'%')
+         ->orWhere('comment_content', 'like', '%'.$query.'%')
+         ->orWhere('comment_by', 'like', '%'.$query.'%')
+         ->orWhere('post_of_comment', 'like', '%'.$query.'%')
+         ->orderBy('comment_id', 'desc')
          ->get();
          
       }
       else
       {
-       $data = DB::table('user')
-         ->orderBy('user_id', 'desc')
+       $data = DB::table('comment')
+         ->orderBy('comment_id', 'desc')
          ->get();
       }
       $total_row = $data->count();
@@ -45,15 +43,11 @@ class UserController extends Controller
        {
         $output .= '
         <tr>
-         <td align="center" >'.$row->name.'</td>
-         <td align="center" >'.$row->phone_number.'</td>
-         <td align="center" >'.$row->address.'</td>
-         <td align="center" >'.$row->blood_group.'</td>
-         <td align="center" >'.$row->name.'</td>
-         <td align="center" >'.$row->user_type.'</td>
-         <td align="center" >'.$row->email.'</td>
-       
-         <td align="center" >
+         <td align="center" >'.$row->comment_id.'</td>
+         <td align="center" >'.$row->comment_content.'</td>
+         <td align="center" >'.$row->comment_by.'</td>
+         <td align="center" >'.$row->post_of_comment.'</td>
+         <td align="center" s>
                 <a href="">Details</a> |
                 <a href="">Delete</a> 
             </td>

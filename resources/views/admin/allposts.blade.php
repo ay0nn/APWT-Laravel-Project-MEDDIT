@@ -13,25 +13,21 @@
  <body>
   <br />
   <div class="container ">
-   <h3 align="center">All Users</h3><br /><a href="{{ route('logout')}}" class="btn btn-danger">Logout</a>
+   <h3 align="center">All Posts</h3><br /><a href="{{ route('logout')}}" class="btn btn-danger">Logout</a>
    <div class="panel panel-default">
     <div class="panel-body">
         
      <div class="form-group">
-      <input type="text" name="search" id="search" class="form-control" placeholder="Search Customer Data" />
+      <input type="text" name="search" id="search" class="form-control" placeholder="Search Posts......." />
      </div>
      <div class="table-responsive">
-      <h3 align="center" color="Green">Total Users : <span id="total_records"></span></h3>
-      <div class="text-align-center">      <table class="table table-striped table-bordered" align="center" >
+      <h3 align="center">Total Posts: <span id="total_records"></span></h3>
+      <table class="table table-striped table-bordered">
        <thead>
         <tr>
-         <th>User ID</th>
-         <th>Name</th>
-         <th>Phone Number</th>
-         <th>Address</th>
-         <th>Blood Group</th>
-         <th>User Type</th>
-         <th>Email</th>
+         <th>Post ID</th>
+         <th>Post Content</th>
+         <th>Posted By</th>
          <th>Action</th>
         </tr>
        </thead>
@@ -40,8 +36,6 @@
        </tbody>
       </table>
      </div>
-     </div>
-
     </div>    
    </div>
   </div>
@@ -63,7 +57,7 @@ $(document).ready(function(){
  function fetch_data(query = '')
  {
   $.ajax({
-   url:"{{ route('live_search.action') }}",
+   url:"{{ route('allposts.action') }}",
    method:'GET',
    data:{query:query},
    dataType:'json',
