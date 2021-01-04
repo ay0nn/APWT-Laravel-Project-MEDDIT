@@ -54,8 +54,8 @@ class UserController extends Controller
          <td align="center" >'.$row->email.'</td>
        
          <td align="center" >
-                <a href="">Details</a> |
-                <a href="">Delete</a> 
+               
+                <a class="btn btn-danger sm">Delete</a> 
             </td>
         </tr>
         ';
@@ -77,4 +77,28 @@ class UserController extends Controller
       echo json_encode($data);
      }  
     }
+
+
+
+    ///API--------
+public function review(Request $req){
+    $client = new \GuzzleHttp\Client();
+
+  $request = $client->get('http://localhost:3001/admin/userlist');
+  $data =json_decode($request->getBody(),true);
+  return view('admin.userview')->with('review', $data);
+
+}
+
+public function noticereviews(Request $req){
+  $client = new \GuzzleHttp\Client();
+
+$request = $client->get('http://localhost:3001/admin/noticelist');
+$data =json_decode($request->getBody(),true);
+return view('admin.noticereview')->with('noticereviews', $data);
+
+}
+
+
+
 }

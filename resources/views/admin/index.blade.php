@@ -23,7 +23,7 @@ rel="stylesheet">
         
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
+            <div class="container justify-content-center">
             <div class="h6 text-gray-50 mb-20">
                
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,10 @@ rel="stylesheet">
                        <li class="nva-item mx-0 mx-lg-1"><butto class="btn btn-light btn-sm disabled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#page-top">Meddit</a></span></li>
                         <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-success btn-sm disabled"><a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fa fa-user " aria-hidden="true"></i>Welcome-{{ Session::get('user')->name }}</a></span></li>
                         <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-light btn-sm"><a href="{{ route('updf') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-download"></i>Download Notice</a></span></li>
+                        <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-danger btn-sm"><a href="{{ route('review') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-sign-out-alt mr-1 pr-1"></i>All Users</a></span></li>
+                        <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-light btn-sm"><a href="{{ route('notice.review') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-download"></i>All Notices</a></span></li>
                         <li class="nav-item mx-0 mx-lg-1"><span class="btn btn-danger btn-sm"><a href="{{ route('logout') }}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fas fa-sign-out-alt mr-1 pr-1"></i>Logout</a></span></li>
+                  
                     </ul>
                     </div>
 
@@ -47,9 +50,9 @@ rel="stylesheet">
     <div class="row justify-content-center">
         <div class="col-md-20">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header justify-content-center">Admin Dashboard</div>
 
-                <div class="card-body" aling="center">
+                <div class="card-body " aling="center">
                 <div class="btn-group">
                    <button class="btn btn-success btn-lg"> <a href="{{ route('alluser')}}" font="bolder" class="container">User List</a></button>
                    <button class="btn btn-dark btn-lg">    <a href="{{ route('allposts')}}" font="bolder" class="container">All Post</a></button>

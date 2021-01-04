@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
  <head>
@@ -60,9 +59,7 @@
 
 <script>
 $(document).ready(function(){
-
  fetch_data();
-
  function fetch_data(query = '')
  {
   $.ajax({
@@ -77,7 +74,6 @@ $(document).ready(function(){
    }
   })
  }
-
  $(document).on('keyup', '#search', function(){
   var query = $(this).val();
   fetch_data(query);

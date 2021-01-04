@@ -63,4 +63,9 @@ class AdminController extends Controller
         $pdf = PDF::loadView('admin.allnotices',['notices'=>$notices]);
         return $pdf->download('allnotices.pdf');
     }
+
+  
+
+    
+
 }
