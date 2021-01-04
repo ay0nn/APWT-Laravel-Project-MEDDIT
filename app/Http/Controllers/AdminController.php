@@ -14,6 +14,10 @@ class AdminController extends Controller
     }
 
     ///Notice
+    public function noticelist(){
+    $notices = NoticeModel::all();
+        return view('admin.noticelist',['notices'=>$notices]);
+    }
     public function noticeindex(){
         return view('admin.allnotices');
     }
@@ -25,7 +29,7 @@ class AdminController extends Controller
     public function createNotice(Request $req){
         $notice= new NoticeModel();
         $notice->notice= $req->notice;
-       echo( $notice->save());
+        $notice->save();
         return redirect()->back();
     }
 

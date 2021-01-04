@@ -19,26 +19,26 @@ rel="stylesheet">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Meddit</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ route('admin.index')}}">Meddit</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars m-0 p-0 mx-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fa fa-user mr-1 pr-1" aria-hidden="true"></i>{{ Session::get('user')->name }}</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a href="{{ route('admin.index')}}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"><i class="fa fa-user mr-1 pr-1" aria-hidden="true"></i>{{ Session::get('user')->name }}</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
                <!-- Body Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4" id="portfolio">
             <div class="container">
                 <br>
                 <br>
                 <form method="post" action="submit">
                 @csrf
-                      <div class="form-group">
-                        <textarea id="w3review" name="notice" placeholder="notice" rows="4" cols="40">
+                      <div class="for-group">
+                        <textarea id="" name="notice"  rows="5" cols="100" placeholder="Type Here.....">
                         </textarea>
                         @error('notice')	
 								<span style="color: red">*{{ $message }}</span><br><br>
@@ -46,7 +46,7 @@ rel="stylesheet">
                       </div>
                     <button type="submit" class="btn btn-success">Submit</button>
 
-                    @if (Session::has('re-msg'))
+                      @if (Session::has('re-msg'))
 							<br><br>
 							<div>
 								<span class="alert alert-danger" style="margin-left: 9%">{{ session('re-msg') }}</span>

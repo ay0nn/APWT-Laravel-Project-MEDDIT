@@ -54,7 +54,7 @@ rel="stylesheet">
                    <button class="btn btn-success btn-lg"> <a href="{{ route('alluser')}}" font="bolder" class="container">User List</a></button>
                    <button class="btn btn-dark btn-lg">    <a href="{{ route('allposts')}}" font="bolder" class="container">All Post</a></button>
                    <button class="btn btn-warning btn-lg">    <a href="{{ route('allcomment')}}" font="bolder" class="container">All Comments</a></button>
-                   <button class="btn btn-dark btn-lg">    <a href="{{ route('addnotice')}}" font="bolder" class="container">Notices</a></button>
+                   <button class="btn btn-dark btn-lg">    <a href="{{ route('noticelist')}}" font="bolder" class="container">Notices</a></button>
                 </div>
                 </div>
             </div>       

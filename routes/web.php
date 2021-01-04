@@ -20,7 +20,8 @@ Route::get('/', function () {
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'verify']);
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
-
+Route::get('/signingithub', [App\Http\Controllers\LoginController::class, 'loginwithgithub'])->name('signingithub');
+Route::get('/gtrdrct', [App\Http\Controllers\LoginController::class, 'gtredirect']);
 
 Route::group(['middleware'=>['VerifySession']], function(){
 
@@ -38,6 +39,7 @@ Route::get('/allcomment/action', [App\Http\Controllers\CommentController::class,
 Route::get('/addnotice', [App\Http\Controllers\AdminController::class,'notice'])->name('addnotice');
 Route::post('/submit', [App\Http\Controllers\AdminController::class,'createNotice'])->name('submit');
 
+Route::get('/noticelist', [App\Http\Controllers\AdminController::class, 'noticelist'])->name('noticelist');
 Route::get('/allnotice', [App\Http\Controllers\AdminController::class,'noticeindex']);
 Route::get('/admin/updf', [App\Http\Controllers\AdminController::class,'updf'])->name('updf');
 
