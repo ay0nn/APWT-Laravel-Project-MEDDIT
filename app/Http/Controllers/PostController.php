@@ -45,12 +45,7 @@ class PostController extends Controller
          <td align="center" >'.$row->post_id.'</td>
          <td align="center" >'.$row->post_content.'</td>
          <td align="center" >'.$row->post_by.'</td>
-       
-         <td align="center" >
-                <a href="">Delete</a> 
-            </td>
-                  
-         
+     
         </tr>
         ';
        }
@@ -71,4 +66,15 @@ class PostController extends Controller
       echo json_encode($data);
      }
     }
-}
+
+    ///Guzlle 
+
+    public function postNode(Request $req){
+      $client = new \GuzzleHttp\Client();
+    $request = $client->get('http://localhost:3001/admin/postlist}');
+    $data =json_decode($request->getBody(),true);
+    return view('admin.postfrmNode')->with('postNode', $data);
+    
+    }
+  }
+    

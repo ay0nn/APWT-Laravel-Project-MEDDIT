@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserModel;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class UserController extends Controller
 {
@@ -78,6 +79,15 @@ class UserController extends Controller
      }  
     }
 
+    //User Deletion
+    public function delete($id){
+        
+      $users = UserModel::find($id);
+      $users->delete();
+
+      //$request->session()->flash('success', "Deleted Succesfully!");
+      return redirect()->back();
+  }
 
 
     ///API--------
@@ -99,6 +109,11 @@ return view('admin.noticereview')->with('noticereviews', $data);
 
 }
 
-
+//User List PDF
+public function userpdf(){
+  $users = UserModel::all();
+  $pdf = PDF::loadView('admin.alluserspdf',['users'=>$users]);
+  return $pdf->download('allusers.pdf');
+}
 
 }

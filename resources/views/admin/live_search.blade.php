@@ -34,7 +34,6 @@
          <th>Blood Group</th>
          <th>User Type</th>
          <th>Email</th>
-         <th>Action</th>
         </tr>
        </thead>
        <tbody>

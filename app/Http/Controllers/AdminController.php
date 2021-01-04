@@ -46,7 +46,6 @@ class AdminController extends Controller
         return view('admin.allnotices');
     }
 
-
     public function notice(){
         return view('admin.addnotice');
     }
@@ -57,7 +56,15 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-   
+   //Delete
+   public function delete($id){
+        
+    $notices = NoticeModel::find($id);
+    $notices->delete();
+
+    //$request->session()->flash('success', "Deleted Succesfully!");
+    return redirect()->back();
+}
     public function updf(){
         $notices = NoticeModel::all();
         $pdf = PDF::loadView('admin.allnotices',['notices'=>$notices]);

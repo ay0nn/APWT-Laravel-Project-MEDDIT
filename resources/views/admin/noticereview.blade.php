@@ -12,7 +12,6 @@
   <br />
   <div class="container box">
   <button class="btn btn sm light"> <a class="navbar-brand js-scroll-trigger" href="{{ route('admin.index')}}">Meddit</a></button>
-  <button class="btn btn-success btn sm"><a href="{{ route('addnotice')}}" font="bolder" class="navbar-brand js-scroll-trigger">Add Notices</a></button>
    <h3 align="center">All Notices</h3><br />
    <div class="panel panel-default">
     <div class="panel-body">
@@ -22,6 +21,7 @@
                             <th style="color:red">Notice Id</th>
                             <th style="color:red">Notice Text</th>
                             <th style="color:red">Posted Date</th>
+                            <th style="color:red">Action</th>
                         
                         </tr>
                     </thead>
@@ -32,6 +32,9 @@
 			<td align ="center">{{$noticereviews[$i]['nid']}}</td>
             <td align ="center">{{$noticereviews[$i]['notice']}}</td>
             <td align ="center">{{$noticereviews[$i]['date']}}</td>
+            <td align ="center">
+            <a href="{{route('notice.delete',$noticereviews[$i]['nid'])}}">Delete</a>
+            </td>
 			
 		</tr>
 		@endfor

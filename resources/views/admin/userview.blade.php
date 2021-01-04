@@ -24,6 +24,8 @@
                             <th style="color:red">Address</th>
                             <th style="color:red">Email</th>
                             <th style="color:red">User Type</th>
+                            <th style="color:red">Action</th>
+
 
                         </tr>
                     </thead>
@@ -36,6 +38,8 @@
             <td align="Center">{{$review[$i]['address']}}</td>
             <td align="Center">{{$review[$i]['email']}}</td>
 			<td align="Center">{{$review[$i]['user_type']}}</td>
+            <td >
+            <a href="{{route('user.delete', $review[$i]['user_id'])}}">Delete</a></td>
 		</tr>
 		@endfor
                 </table>

@@ -29,11 +29,14 @@ Route::group(['middleware'=>['VerifySession']], function(){
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class,'index'])->name('admin.index');
 Route::get('/admin/add', [App\Http\Controllers\AdminController::class,'addadmin'])->name('admin.add');
 Route::post('/admin/add', [App\Http\Controllers\AdminController::class,'createadmin']);
+Route::get('/user/delete/{id}',[App\Http\Controllers\UserController::class,'delete'])->name('user.delete');
 
+Route::get('/admin/userpdf', [App\Http\Controllers\UserController::class,'userpdf'])->name('user.pdf');
 Route::get('/admin/userlist',[App\Http\Controllers\UserController::class,'review'])->name('review');
 Route::get('/alluser', [App\Http\Controllers\UserController::class,'index'])->name('alluser');
 Route::get('/live_search/action', [App\Http\Controllers\UserController::class,'action'])->name('live_search.action');
 
+Route::get('/admin/postlist',[App\Http\Controllers\PostController::class,'postNode'])->name('post.postNode');
 Route::get('/allposts', [App\Http\Controllers\PostController::class,'index'])->name('allposts');
 Route::get('/allposts/action', [App\Http\Controllers\PostController::class,'action'])->name('allposts.action');
 
@@ -42,6 +45,7 @@ Route::get('/allcomment/action', [App\Http\Controllers\CommentController::class,
 
 Route::get('/addnotice', [App\Http\Controllers\AdminController::class,'notice'])->name('addnotice');
 Route::post('/submit', [App\Http\Controllers\AdminController::class,'createNotice'])->name('submit');
+Route::get('/notice/delete/{id}',[App\Http\Controllers\AdminController::class,'delete'])->name('notice.delete');
 
 Route::get('/admin/allnotice',[App\Http\Controllers\UserController::class,'noticereviews'])->name('notice.review');
 Route::get('/noticelist', [App\Http\Controllers\AdminController::class, 'noticelist'])->name('noticelist');
