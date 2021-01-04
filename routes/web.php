@@ -25,7 +25,9 @@ Route::get('/gtrdrct', [App\Http\Controllers\LoginController::class, 'gtredirect
 
 Route::group(['middleware'=>['VerifySession']], function(){
 
-Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/home', [App\Http\Controllers\AdminController::class,'index'])->name('admin.index');
+Route::get('/admin/add', [App\Http\Controllers\AdminController::class,'addadmin'])->name('admin.add');
+Route::post('/admin/add', [App\Http\Controllers\AdminController::class,'createadmin']);
 
 Route::get('/alluser', [App\Http\Controllers\UserController::class,'index'])->name('alluser');
 Route::get('/live_search/action', [App\Http\Controllers\UserController::class,'action'])->name('live_search.action');

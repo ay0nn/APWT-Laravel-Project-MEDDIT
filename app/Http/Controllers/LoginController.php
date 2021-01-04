@@ -15,7 +15,7 @@ class LoginController extends Controller
     public function index(){
         return view('/login.index');
 	}
-	//Github Login
+	/*Github Login
 	public function loginwithgithub(){
 		return Socialite::driver('github')->redirect();
 
@@ -23,6 +23,7 @@ class LoginController extends Controller
 
 	public function gtredirect(){
 		$user = Socialite::driver('github')->user();
+		dd($user);
 		$user = UserModel::firstOrCreate([
 			'email' => $user->email,
 			
@@ -35,10 +36,10 @@ class LoginController extends Controller
 			'user_type' => 'user',
 			'password' => Hash::make(Str::random(15))
 		]);
-		Auth::login($user, true);
-		return redirect('/admin.index');
+		UserModel::login($user, true);
+		//return redirect('/admin.index');
 		
-	}
+	}*/
 
          public function verify(Request $req){
 

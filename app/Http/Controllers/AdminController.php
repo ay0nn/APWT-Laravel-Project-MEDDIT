@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\NoticeModel;
+use App\Models\UserModel;
 use Illuminate\Support\Facades\DB;
 use PDF;
 
@@ -11,6 +12,29 @@ class AdminController extends Controller
 {
     public function index(){
         return view('admin.index');
+    }
+    //admin add
+    public function addadmin(){
+        return view('admin.addadmin');
+    }
+
+    public function createadmin(Request $req){
+        $user = new UserModel();
+        $user->name            = $req->name;
+        $user->phone_number    = $req->phone_number;
+        $user->cc_no           = $req->cc_no;
+        $user->address         = $req->address;
+        $user->profession      = $req->profession;
+        $user->blood_group     = $req->blood_group;
+        $user->user_type       = 'admin';
+        $user->email           = $req->email;
+        $user->password        = $req->password;
+
+        if($user->save()){
+            return redirect()->route('admin.index');
+        }else{
+            return back();
+        }
     }
 
     ///Notice
