@@ -17,7 +17,7 @@ use App\Http\Middleware\VerifySession;
 Route::get('/', function () {
     return view('welcome');
 });*/
-Route::resource('books', BookController::class);
+Route::group(['middleware'=>['Ipcheck']], function(){
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'verify']);
 Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
@@ -52,5 +52,5 @@ Route::get('/noticelist', [App\Http\Controllers\AdminController::class, 'noticel
 Route::get('/allnotice', [App\Http\Controllers\AdminController::class,'noticeindex']);
 Route::get('/admin/updf', [App\Http\Controllers\AdminController::class,'updf'])->name('updf');
 
-
+});
 });
