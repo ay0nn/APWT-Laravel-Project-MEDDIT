@@ -47,8 +47,7 @@ class CommentController extends Controller
          <td align="center" >'.$row->comment_by.'</td>
          <td align="center" >'.$row->post_of_comment.'</td>
          <td align="center" s>
-                <a href="">Details</a> |
-                <a href="">Delete</a> 
+                <a href="" class="btn btn-danger btn sm">Delete</a> 
             </td>
                   
          

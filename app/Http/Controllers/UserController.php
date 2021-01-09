@@ -23,7 +23,7 @@ class UserController extends Controller
       if($query != '')
       {
        $data = DB::table('user')
-         ->where('name', 'like', '%'.$query.'%')
+         ->where('name','like', '%'.$query.'%')
          ->orWhere('phone_number', 'like', '%'.$query.'%')
          ->orWhere('address', 'like', '%'.$query.'%')
          ->orWhere('blood_group', 'like', '%'.$query.'%')
@@ -31,7 +31,6 @@ class UserController extends Controller
          ->orWhere('email', 'like', '%'.$query.'%')
          ->orderBy('user_id', 'desc')
          ->get();
-         
       }
       else
       {
@@ -53,9 +52,7 @@ class UserController extends Controller
          <td align="center" >'.$row->name.'</td>
          <td align="center" >'.$row->user_type.'</td>
          <td align="center" >'.$row->email.'</td>
-       
-         <td align="center" >
-               
+         <td align="center" >    
                 <a class="btn btn-danger sm">Delete</a> 
             </td>
         </tr>

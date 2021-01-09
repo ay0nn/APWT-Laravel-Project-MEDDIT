@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\NoticeModel;
 use App\Models\UserModel;
 use Illuminate\Support\Facades\DB;
+use Validator;
 use PDF;
 
 class AdminController extends Controller
@@ -17,8 +18,25 @@ class AdminController extends Controller
     public function addadmin(){
         return view('admin.addadmin');
     }
-
+  
     public function createadmin(Request $req){
+
+        $validation = Validator::make($req->all(), [
+            'name' => 'required',
+            'phone_number' => 'required|min:11',
+            'cc_no' => 'required|min:13',
+            'address' => 'required',
+            'profession' => 'required',
+            'blood_group' => 'required',
+            'email' => 'required',
+            'password' => 'required|min:8'
+
+       ]);
+       if ($validation->fails())
+       {
+           return redirect()->route('admin.add')->withErrors($validation)->withInput();
+       }
+       else{
         $user = new UserModel();
         $user->name            = $req->name;
         $user->phone_number    = $req->phone_number;
@@ -36,6 +54,7 @@ class AdminController extends Controller
             return back();
         }
     }
+}
 
     ///Notice
     public function noticelist(){
@@ -50,14 +69,23 @@ class AdminController extends Controller
         return view('admin.addnotice');
     }
     public function createNotice(Request $req){
+        $validation = Validator::make($req->all(), [
+            'notice' => 'required'
+       ]);
+       if ($validation->fails())
+       {
+           return redirect()->route('addnotice')->withErrors($validation)->withInput();
+       }
+       else{
         $notice= new NoticeModel();
         $notice->notice= $req->notice;
         $notice->save();
         return redirect()->back();
     }
+}
 
    //Delete
-   public function delete($id){
+ public function delete($id){
         
     $notices = NoticeModel::find($id);
     $notices->delete();
@@ -71,8 +99,14 @@ class AdminController extends Controller
         return $pdf->download('allnotices.pdf');
     }
 
-  
-
+   /* public function deleteall(Request $request){
+        $nid = $request->get('ids');   
+        $notices = NoticeModel::find($nid);
+        $notices->delete();
+    
+        //$request->session()->flash('success', "Deleted Succesfully!");
+        return redirect()->back();
+    }*/
     
 
 }

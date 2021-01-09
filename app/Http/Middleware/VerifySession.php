@@ -19,7 +19,7 @@ class VerifySession
         if($request->session()->has('user')){
            return $next($request);
         }else{
-                $request->session()->flash('msg', 'Error!! Login First......');
+                $request->session()->flash('msg', 'Error!!Login First......');
                 return redirect()->route('login');
             }
     }

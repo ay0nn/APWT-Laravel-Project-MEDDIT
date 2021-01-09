@@ -41,96 +41,78 @@ rel="stylesheet">
         <div class="text-center">
             <h1 class="h4 text-gray-900 mb-4">Meddit</h1>
         </div>
-        <form class="admin" method="POST" action="">
+        <form class="" method="POST" action="">
                             @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input id="name" type="text" class="form-control form-control-user  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Your Name..">
-                                        @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                        <input id="name" type="text" class="form-control form-control-user"  name="name"  placeholder="Your Name..">
+                                        @error('name')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id=""
                                           name="phone_number"  placeholder="Phone Number..">
-                                          @error('phone_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                          @error('phone_number')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input id="cc_no" type="text" class="form-control form-control-user  @error('name') is-invalid @enderror" name="cc_no" value="{{ old('cc-no') }}" required autocomplete="cc_no" autofocus placeholder="Credit Card..">
-                                        @error('cc_no')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                        <input id="cc_no" type="text" class="form-control form-control-user  " name="cc_no" placeholder="Credit Card..">
+                                        @error('cc_no')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="address"
                                           name="address"  placeholder="Address..">
-                                          @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                          @error('address')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input id="profession" type="text" class="form-control form-control-user" name="profession" value="{{ old('profession') }}" required autocomplete="profession" autofocus placeholder="Profession..">
-                                        @error('profession')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                        <input id="profession" type="text" class="form-control form-control-user" name="profession"  placeholder="Profession..">
+                                        @error('profession')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="blood_group"
                                           name="blood_group"  placeholder="Blood group..">
-                                          @error('blood_group')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                          @error('blood_group')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input id="user_type" type="text" class="form-control form-control-user" name="user_type" value="admin" required autocomplete="user_type" disabled>
-                                        @error('user_type')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                        <input id="user_type" type="text" class="form-control form-control-user" name="user_type" value="admin"  disabled>
+                                        @error('user_type')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="email" class="form-control form-control-user" id="email"
                                           name="email"  placeholder="Email..">
-                                          @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                          @error('email')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
                                 </div>
                               
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input id="password" type="password" class="form-control form-control-user" name="password" required autocomplete="password" placeholder="Password....">
-                                        @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                        <input id="password" type="password" class="form-control form-control-user" name="password" placeholder="Password....">
+                                        @error('password')	
+								<span style="color: red">*{{ $message }}</span><br><br>
+						@enderror
                                     </div>
 
                                <div>

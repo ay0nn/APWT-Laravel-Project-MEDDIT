@@ -37,7 +37,7 @@ rel="stylesheet">
                 <br>
                 <form method="post" action="submit">
                 @csrf
-                      <div class="for-group">
+                      <div class="form-group">
                         <textarea id="" name="notice"  rows="5" cols="100" placeholder="Type Here.....">
                         </textarea>
                         @error('notice')	

@@ -67,9 +67,7 @@ rel="stylesheet">
     </button>
     <span role="alert" style="color: red">{{session('msg')}}</span> 
 
-        <div class="text-center">
-            <a class="small" href="{{route('signingithub')}}">Sign With Github</a>
-        </div>
+        
         <div class="text-center">
             <a class="small" href="{{'/register'}}">Create an Account!</a>
         </div>

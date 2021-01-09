@@ -28,7 +28,7 @@ Route::group(['middleware'=>['VerifySession']], function(){
 
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class,'index'])->name('admin.index');
 Route::get('/admin/add', [App\Http\Controllers\AdminController::class,'addadmin'])->name('admin.add');
-Route::post('/admin/add', [App\Http\Controllers\AdminController::class,'createadmin']);
+Route::post('/admin/add', [App\Http\Controllers\AdminController::class,'createadmin'])->name('admin.add');
 Route::get('/user/delete/{id}',[App\Http\Controllers\UserController::class,'delete'])->name('user.delete');
 
 Route::get('/admin/userpdf', [App\Http\Controllers\UserController::class,'userpdf'])->name('user.pdf');
